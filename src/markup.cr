@@ -7,10 +7,12 @@ class Markup
   end
 
   def add_head!(html)
-    html.insert(0, "\n<head>\n<meta charset='utf-8'>\n</head>\n")
+    head = "\n<head>\n<meta charset='utf-8'>\n</head>\n"
+    head + html
   end
 
   def add_stylesheet!(html, css_path)
-    html.insert(0, "\n<style>#{File.read(css_path)}</style>\n")
+    style = "\n<style>#{File.read(css_path)}</style>\n"
+    style + html
   end
 end

@@ -1,10 +1,11 @@
 require "./**"
 
-module MDResume
-  extend self
-  def process(options)
+class MDResume
+  def initialize(options)
     @options = options
+  end
 
+  def process()
     create_pdf_file  if generate_pdf?
     create_html_file if generate_html?
   end
@@ -28,11 +29,11 @@ module MDResume
   end
 
   private def markdown_path
-    options.fetch(:markdown_path)
+    options.fetch(:markdown_path).to_s #to force type to be String instead of String| Bool
   end
 
   private def css_path
-    options.fetch(:css_path, File.expand_path("../../style/style.css", __FILE__))
+    options.fetch(:css_path, File.expand_path("../../style/style.css", __FILE__)).to_s
   end
 
   private def raw_html

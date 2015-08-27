@@ -1,3 +1,3 @@
-module MDResume
+class MDResume
   VERSION = "0.0.1"
 end

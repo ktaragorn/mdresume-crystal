@@ -29,9 +29,14 @@ rescue OptionParser::InvalidOption
   exit 1
 end
 
-begin
-  MDResume.process(options.merge({markdown_path: ARGV.first}))
-rescue Errno::ENOENT
-  puts opts
-  exit 1
+if ARGV.any?
+  MDResume.new(options.merge({markdown_path: ARGV.first})).process
+else
+  puts "Path to the markdown file has to be provided"
 end
+# begin
+
+# rescue Errno::ENOENT
+#   puts opts
+#   exit 1
+# end
