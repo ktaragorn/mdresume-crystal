@@ -1,19 +1,13 @@
-#!/usr/bin/env ruby
+require "option_parser"
+require "../src/mdresume"
+options = {} of Symbol => (Bool | String)
 
-$LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__)) + '/../lib/')
-
-require 'optparse'
-require 'biteydown'
-
-options = {}
 opts = OptionParser.new do |opts|
-  opts.program_name = File.basename($0)
-  opts.banner = "Usage: #{opts.program_name} [options] file"
+  opts.banner = "Usage: #{File.basename($0)} [options] file"
 
   opts.on("--html", "Create HTML file") do
     options[:html] = true
   end
-
   opts.on("--pdf", "Create PDF file") do
     options[:pdf] = true
   end
@@ -29,14 +23,14 @@ opts = OptionParser.new do |opts|
 end
 
 begin
-  opts.parse! ARGV
+  opts.parse!
 rescue OptionParser::InvalidOption
   puts opts
   exit 1
 end
 
 begin
-  Biteydown.process(options.merge(:markdown_path => ARGV.first))
+  MDResume.process(options.merge({markdown_path: ARGV.first}))
 rescue Errno::ENOENT
   puts opts
   exit 1
