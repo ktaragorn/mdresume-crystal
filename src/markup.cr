@@ -1,5 +1,3 @@
-require 'github/markup'
-
 class Markup
   def generate_html(markdown_path, css_path)
     html = GitHub::Markup.render(markdown_path)

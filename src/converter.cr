@@ -5,9 +5,7 @@ class Converter
   end
 
   def create_html_file(html)
-    File.open(html_path, 'w') do |file|
-      file.write(html)
-    end
+    File.write(html_path, html)
   end
 
   def create_pdf_file(html)
@@ -22,7 +20,5 @@ class Converter
     File.delete(html_path)
   end
 
-  private
-
-  attr_reader :html_path, :pdf_path
+  getter :html_path, :pdf_path
 end

@@ -12,7 +12,5 @@ class FilePath
     "#{output_dir}#{output_filename}.pdf"
   end
 
-  private
-
-  attr_reader :output_dir, :output_filename
+  getter :output_dir, :output_filename
 end
