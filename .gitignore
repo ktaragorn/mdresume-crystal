@@ -1,2 +1,6 @@
-.crystal/
+/.deps/
+/libs/
+/.crystal/
+/doc/
 .vagrant/
+
