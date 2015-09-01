@@ -16,6 +16,10 @@ opts = OptionParser.new do |opts|
     options[:css_path] = css_path
   end
 
+  opts.on("--github", "Use Github flavored markdown using their api, instead of the inbuilt markdown parser") do
+    options[:github] = true
+  end
+
   opts.on("-h", "--help", "Display help") do
     puts opts
     exit

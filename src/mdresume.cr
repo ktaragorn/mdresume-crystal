@@ -37,7 +37,7 @@ class MDResume
   end
 
   private def raw_html
-    markup.generate_html(markdown_path, css_path)
+    markup.generate_html(markdown_path, css_path, github: options.fetch(:github, false))
   end
 
   private def markup

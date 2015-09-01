@@ -1,9 +1,14 @@
 require "markdown"
 class Markup
-  def generate_html(markdown_path, css_path)
-    html = Markdown.to_html(File.read(markdown_path))
-    html = add_head(html, css_path)
+  def generate_html(markdown_path, css_path, github = false)
+    markdown_cls = if github
+      GithubMarkdown
+    else
+      Markdown
+    end
 
+    html = markdown_cls.to_html(File.read(markdown_path))
+    html = add_head(html, css_path)
   end
 
   def add_head(html, css_path)
