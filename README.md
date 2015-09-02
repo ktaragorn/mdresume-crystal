@@ -7,8 +7,8 @@ The hope for this project is both to explore the language, and provide an easy w
 
 ## Installation
 
-Download and copy the binary from the latest release(TODO) into some folder on your path
-Install wkhtmltopdf if you want to generate pdf
+Download and copy the binary from the latest release into some folder on your path  
+Install `wkhtmltopdf` if you want to generate pdf
 
 ## Usage
 
@@ -17,6 +17,7 @@ Install wkhtmltopdf if you want to generate pdf
             --html                       Create HTML file
             --pdf                        Create PDF file
             --css file                   Path to CSS file
+            --github 					 If you want to use Github Flavoured Markdown
         -h, --help                       Display help
 
     $ mdresume --html --pdf example/curriculum.md
