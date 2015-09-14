@@ -36,6 +36,9 @@ CSS works by associating rules with HTML elements. In this case, there are a lit
 
 [Markdown]: http://daringfireball.net/projects/markdown/
 
+## Additional Features
+1. HTML comments can be used to add comments to the resume which will be removed before generation of html/pdf. This can be multiline comments as well. Html comments are enclosed by `<!-- -->`
+
 ## Development
 
 TODO: Write instructions for development

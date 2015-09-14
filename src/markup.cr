@@ -7,8 +7,14 @@ class Markup
       Markdown
     end
 
-    html = markdown_cls.to_html(File.read(markdown_path))
+    markdown = remove_comments(File.read(markdown_path))
+
+    html = markdown_cls.to_html(markdown)
     html = add_head(html, css_path)
+  end
+
+  def remove_comments(markdown)
+    markdown.gsub(/<!--[^(-->)]*-->/m, "")
   end
 
   def add_head(html, css_path)

@@ -7,6 +7,9 @@
 
 
 ## Summary
+<!--
+Multiline Comment 1
+-->
 
 I am a **software engineer** with more than **6 years of experience**. I am interested
 in dynamic programming languages, mainly **Ruby** and **Groovy**. I am highly
@@ -26,6 +29,9 @@ I wrote a book about Markdown with Packt Publishing: **[Instant Markdown][3]**.
 Occasionally, I **speak at software conferences**: Agile Spain Conference,
 Greach, Codemotion, SoCraTes UK and local user groups.
 
+<!--
+Multiline comment 2
+-->
 
 ## Experience
 
