@@ -33,7 +33,8 @@ class MDResume
   end
 
   private def css_path
-    options.fetch(:css_path, File.expand_path("../../style/style.css", __FILE__)).to_s
+    default = File.expand_path("./style.css", File.dirname(markdown_path))
+    options.fetch(:css_path, default).to_s
   end
 
   private def raw_html

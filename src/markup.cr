@@ -17,6 +17,11 @@ class Markup
   end
 
   def stylesheet(css_path)
-    "\n<style>#{File.read(css_path)}</style>\n"
+    if File.exists? css_path
+      "\n<style>#{File.read(css_path)}</style>\n"
+    else
+      puts "CSS file not found (default is ./style.css)"
+      ""
+    end
   end
 end
